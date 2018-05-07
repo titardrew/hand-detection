@@ -136,7 +136,7 @@ The performance was pretty good, espesially in detection. Here are some examples
 ![good4](/img/good4.jpg)
 ![good5](/img/good5.jpg)
 
-#### Main mistakes sources.
+#### Main mistake sources.
 
 Model mistakes were almost all while considering hands that overlay or when one is above another:
 
