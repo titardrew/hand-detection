@@ -13,9 +13,9 @@ flags.DEFINE_string('image_path', 'raw_data/test', 'Path to image, or'
 flags.DEFINE_integer('limit', 0, 'If image_path is a path to directory'
                  ' this limits number of images to the particular number.')
 flags.DEFINE_string('frozen_path',
-                    'fine_tuned_model/frcnn_inc_v2_aug5/optimized_inference_graph.pb',
+                    'fine_tuned_model/frcnn_inc_v2_aug4/optimized_inference_graph.pb',
                     'Path to frozen graph of the model')
-flags.DEFINE_string('output_dir', 'predicted_images/frcnn_inc_v2_aug5',
+flags.DEFINE_string('output_dir', 'predicted_images/',
                     'This path will be used to store output images in.')
 
 FLAGS = flags.FLAGS

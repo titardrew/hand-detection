@@ -42,7 +42,7 @@ RUN mkdir -p hand-detection/fine_tuned_model/frcnn_inc_v2_aug4
 
 COPY visualization_utils.py /hand-detection
 COPY frcnn_inc_v2_aug.config /hand-detection
-COPY fine_tuned_model/frcnn_inc_v2_aug4/optimized_inference_graph.pb /hand-detecion/fine_tuned_model/frcnn_inc_v2_aug4
+COPY fine_tuned_model/frcnn_inc_v2_aug4/optimized_inference_graph.pb /hand-detecion/fine_tuned_model/frcnn_inc_v2_aug4/.
 COPY detect.py /hand-detection
 
 WORKDIR "/hand-detection"
