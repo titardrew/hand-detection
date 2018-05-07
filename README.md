@@ -68,18 +68,18 @@ For you, my poor friend, I recommend to use docker, because I'm still not able t
   You have to specify volume with data, volume with `optimized_inference_graph.pb` and 
   mount the output directory:
   
-  docker run -it -v path/to/raw/images:/hand-detection/path/you/want \
-    --mount type=bind,source=path/to/predicted_images,target=/hand-detection/predicted_images \
-    -v $(pwd)/fine_tuned_model/frcnn_inc_v2_aug4:/hand-detection/fine_tuned_model/frcnn_inc_v2_aug4/ \
-    hand-detection bash
+        docker run -it -v path/to/raw/images:/hand-detection/path/you/want \
+            --mount type=bind,source=path/to/predicted_images,target=/hand-detection/predicted_images \
+            -v $(pwd)/fine_tuned_model/frcnn_inc_v2_aug4:/hand-detection/fine_tuned_model/frcnn_inc_v2_aug4/ \
+            hand-detection bash
     
   For example,
   
-  docker run -it -v $(pwd)/raw_data/test:/hand-detection/raw_data/test \
-    --mount type=bind,source=$(pwd)/predicted_images,target=/hand-detection/predicted_images \
-    -v $(pwd)/fine_tuned_model/frcnn_inc_v2_aug4:/hand-detection/fine_tuned_model/frcnn_inc_v2_aug4/ \
-    hand-detection bash
-  
+        docker run -it -v $(pwd)/raw_data/test:/hand-detection/raw_data/test \
+            --mount type=bind,source=$(pwd)/predicted_images,target=/hand-detection/predicted_images \
+            -v $(pwd)/fine_tuned_model/frcnn_inc_v2_aug4:/hand-detection/fine_tuned_model/frcnn_inc_v2_aug4/ \
+            hand-detection bash
+
 #### Manually
    Just run detect.py:
    
