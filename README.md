@@ -39,6 +39,8 @@
     `pip install -r requirements.txt`
 
 **Note**: For gpu support you should have tensorflow with gpu + cuda + cudnn (see tf docs)
+Also note, that I used the newest tf version (1.8.0), but I have not specified tha in requirements.txt file, as
+I am not sure, that this will crush on earlier versions.
 
 ### Docker (Recommended)
 
