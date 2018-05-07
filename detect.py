@@ -8,7 +8,7 @@ from tqdm import tqdm
 from itertools import combinations
 
 flags = tf.app.flags
-flags.DEFINE_string('image_path', 'raw_data/test', 'Path to image, or'
+flags.DEFINE_string('image_path', './raw_data/test', 'Path to image, or'
                     ' directory with images (.jpg)')
 flags.DEFINE_integer('limit', 0, 'If image_path is a path to directory'
                  ' this limits number of images to the particular number.')
