@@ -1,0 +1,15 @@
+numpy
+tensorflow
+pillow
+tqdm
+Pillow
+h5py
+ipykernel
+jupyter
+matplotlib
+numpy
+pandas
+tqdm
+scipy
+sklearn
+tensorflow
