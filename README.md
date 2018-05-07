@@ -176,4 +176,5 @@ https://drive.google.com/file/d/1uD_a9GMPTaxunVW849nx0QpVshlZYz4u/view?usp=shari
 However, I had some unimplemented ideas. For example, I'd like to make the model faster using something
 less heavy than Faster-RCNN, or adding some extra logic to perform detection less often. I also
 had problems with Windows "deployment", and although I solved them using docker, I'd like to add native
-support for the programm. God Save The Windows.
+support for the programm. I also would like to provide nvidia-docker to run model inside the docker using GPU.
+God Save The Windows.
