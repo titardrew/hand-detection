@@ -60,30 +60,47 @@ Build your own docker container:
 #### Windows
 
 For you, my poor friend, I recommend to use docker, because I'm still not able to solve the problem with 
-*.pb graph for inference.
+*.pb graph for inference. So, please:
+## DON'T USE optimized_inference_graph.pb ON WINDOWS, because TF raises an encoding error :(
 
 ### Usage
 
 #### Docker
-  You have to specify volume with data, volume with `optimized_inference_graph.pb` and 
+  You have to specify volume with data, volume with `optimized_inference_graph.pb` 
+  (or `frozen_inference_graph.pb`)  and 
   mount the output directory:
   
     docker run -it -v path/to/raw/images:/hand-detection/path/you/want \
         --mount type=bind,source=path/to/predicted_images,target=/hand-detection/predicted_images \
         -v $(pwd)/fine_tuned_model/frcnn_inc_v2_aug4:/hand-detection/fine_tuned_model/frcnn_inc_v2_aug4/ \
-        hand-detection bash
+        titardrew/hand-detection bash
     
   For example,
   
     docker run -it -v $(pwd)/raw_data/test:/hand-detection/raw_data/test \
         --mount type=bind,source=$(pwd)/predicted_images,target=/hand-detection/predicted_images \
         -v $(pwd)/fine_tuned_model/frcnn_inc_v2_aug4:/hand-detection/fine_tuned_model/frcnn_inc_v2_aug4/ \
-        hand-detection bash
+        titardrew/hand-detection bash
+  
+  or for Windows
+  
+    docker run -it -v C:\Users\Андрей-ПК\hands-detector\raw_data\test:/hand-detection/raw_data/test \
+        --mount type=bind,source=C:\Users\Андрей-ПК\hands-detector\predicted_images,target=/hand-detection/predicted_images \ 
+        -v C:\Users\Андрей-ПК\hands-detector\fine_tuned_model\frcnn_inc_v2_aug4:/hand-detection/fine_tuned_model/frcnn_inc_v2_aug \
+        titardrew/hand-detection bash
+
+  Note, that if you built it by your own, you should specify the name you set instead of `titardrew/hand-detection`
+  
+  Now, see 'Manually' chapter!
 
 #### Manually
    Just run detect.py:
    
    `python3 detect.py`
+   
+   For Windows you should specify that you don't want to use optimized_inference_graph:
+   
+   `python3 detect.py --frozen_path=fine_tuned_model/frcnn_inc_v2_aug4/frozen_inference_graph.pb`
    
    You can specify some flags within it (see `python3 detect.py --help`).
   
